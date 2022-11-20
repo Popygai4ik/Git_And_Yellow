@@ -4,12 +4,12 @@ from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtGui import QPainter, QColor
 import sys
 import random
+from UI import Ui_MainWindow
 
-
-class Example(QMainWindow):
+class Example(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        self.setupUi(self)
         self.flag = False
         self.x, self.y = (150, 100)
         self.setWindowTitle('Git и желтые окружности')
@@ -17,7 +17,7 @@ class Example(QMainWindow):
 
     def ris(self):
         self.size = random.randint(5, 100)
-        self.color = (255, 255, 0)
+        self.color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
         self.flag = True
         self.update()
 
