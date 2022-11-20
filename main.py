@@ -6,6 +6,7 @@ import sys
 import random
 from UI import Ui_MainWindow
 
+
 class Example(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
